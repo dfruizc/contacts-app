@@ -8,8 +8,13 @@
 
 # Node
 /node_modules
-npm-debug.log
+npm-debug.log*
 yarn-error.log
+.pnpm-debug.log*
+
+# Angular
+/.angular
+.angular/cache
 
 # IDEs and editors
 .idea/
@@ -19,6 +24,9 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
+*.swp
+*.swo
+*~
 
 # Visual Studio Code
 .vscode/*
@@ -29,7 +37,6 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
 .sass-cache/
 /connect.lock
 /coverage
@@ -37,7 +44,14 @@ yarn-error.log
 testem.log
 /typings
 __screenshots__/
+*.tsbuildinfo
 
 # System files
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Environment files
+.env
+.env.local
+.env.*.local
