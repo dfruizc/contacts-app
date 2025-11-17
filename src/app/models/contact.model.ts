@@ -1,6 +1,6 @@
 export interface Phone {
   id: string;
-  type: string;   // ej: "mobile", "home", "work"
+  type: string;
   number: string;
 }
 

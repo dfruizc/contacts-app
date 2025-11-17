@@ -1,0 +1,176 @@
+.contact-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 0 0 300px;
+  min-width: 280px;
+  max-width: 350px;
+}
+
+.contact-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 150px;
+  overflow: visible;
+}
+
+.contact-name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.contact-email {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+.contact-phones {
+  margin: 0;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  flex: 1 1 auto;
+  min-width: 220px;
+  max-width: 300px;
+  overflow: visible;
+}
+
+.phone-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.phone-item:last-child {
+  margin-bottom: 0;
+}
+
+.phone-type {
+  font-weight: 500;
+  color: #2563eb;
+  text-transform: capitalize;
+  min-width: 60px;
+  font-size: 0.75rem;
+}
+
+.phone-number {
+  color: #333;
+  font-weight: 500;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+  flex-shrink: 0;
+}
+
+.btn {
+  flex: 0 0 auto;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn-edit {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-edit:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+.btn-delete {
+  background: #f43f5e;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #e11d48;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .contact-header {
+    flex: 1 1 auto;
+  }
+
+  .contact-phones {
+    min-width: auto;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+

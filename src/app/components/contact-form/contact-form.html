@@ -1,0 +1,105 @@
+<div class="form-container">
+  <div class="form-header">
+    <h1>{{ isEditMode ? 'Editar Contacto' : 'Nuevo Contacto' }}</h1>
+    <button type="button" class="btn btn-secondary" (click)="onCancel()">
+      Cancelar
+    </button>
+  </div>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+    <div class="form-group">
+      <label for="name">Nombre *</label>
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        class="form-control"
+        [class.error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+        placeholder="Ej: Diego Ruiz"
+      />
+      <span class="error-message" *ngIf="getFieldError('name')">
+        {{ getFieldError('name') }}
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        class="form-control"
+        [class.error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+        placeholder="Ej: diego.ruiz@atltest.com"
+      />
+      <span class="error-message" *ngIf="getFieldError('email')">
+        {{ getFieldError('email') }}
+      </span>
+    </div>
+
+    <div class="form-group">
+      <div class="phones-header">
+        <label>Teléfonos *</label>
+        <button
+          type="button"
+          class="btn btn-add-phone"
+          (click)="addPhone()"
+        >
+          Agregar Teléfono
+        </button>
+      </div>
+
+      <div formArrayName="phones" class="phones-list">
+        <div
+          *ngFor="let phone of phonesFormArray.controls; let i = index"
+          [formGroupName]="i"
+          class="phone-item-form"
+        >
+          <div class="phone-inputs">
+            <select formControlName="type" class="form-control phone-type">
+              <option value="mobile">Móvil</option>
+              <option value="home">Casa</option>
+              <option value="work">Trabajo</option>
+              <option value="other">Otro</option>
+            </select>
+            
+            <input
+              type="tel"
+              formControlName="number"
+              class="form-control phone-number"
+              [class.error]="phonesFormArray.at(i).get('number')?.invalid && phonesFormArray.at(i).get('number')?.touched"
+              placeholder="Ej: +57 300 123 4567"
+            />
+            
+            <button
+              type="button"
+              class="btn btn-remove-phone"
+              (click)="removePhone(i)"
+              [disabled]="phonesFormArray.length === 1"
+              title="Eliminar teléfono"
+            >
+              ×
+            </button>
+          </div>
+          
+          <span class="error-message" *ngIf="getPhoneError(i)">
+            {{ getPhoneError(i) }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn btn-cancel" (click)="onCancel()">
+        Cancelar
+      </button>
+      <button
+        type="submit"
+        class="btn btn-submit"
+        [disabled]="contactForm.invalid"
+      >
+        {{ isEditMode ? 'Guardar Cambios' : 'Crear Contacto' }}
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,33 @@
+<div class="contact-list-container">
+  <div class="header">
+    <h1>Lista de Contactos</h1>
+    <a routerLink="/contact/new" class="btn btn-primary">
+      Nuevo Contacto
+    </a>
+  </div>
+
+  <div class="contacts-grid" *ngIf="contacts.length > 0; else emptyState">
+    <app-contact-item
+      *ngFor="let contact of contacts"
+      [contact]="contact"
+      (edit)="onEdit($event)"
+      (delete)="onDelete($event)"
+    />
+  </div>
+
+  <ng-template #emptyState>
+    <div class="empty-state">
+      <div class="empty-icon">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+      <h2>No hay contactos registrados</h2>
+      <p>Crea tu primer contacto para comenzar</p>
+      <a routerLink="/contact/new" class="btn btn-primary">
+        Agregar Contacto
+      </a>
+    </div>
+  </ng-template>
+</div>

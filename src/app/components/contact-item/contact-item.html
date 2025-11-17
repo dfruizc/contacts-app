@@ -1,0 +1,30 @@
+<div class="contact-card">
+  <div class="contact-header">
+    <div class="contact-avatar">
+      {{ contact.name.charAt(0).toUpperCase() }}
+    </div>
+    <div class="contact-info">
+      <h3 class="contact-name">{{ contact.name }}</h3>
+      <p class="contact-email">{{ contact.email }}</p>
+    </div>
+  </div>
+  
+  <div class="contact-phones">
+    <div class="phone-item" *ngFor="let phone of contact.phones">
+      <span class="phone-type" *ngIf="phone.type">{{ phone.type }}:</span>
+      <span class="phone-number">{{ phone.number }}</span>
+    </div>
+    <div class="phone-item" *ngIf="contact.phones.length === 0">
+      <span class="phone-number" style="color: #999; font-style: italic;">Sin teléfonos</span>
+    </div>
+  </div>
+  
+  <div class="contact-actions">
+    <button type="button" class="btn btn-edit" (click)="onEdit()">
+      Editar
+    </button>
+    <button type="button" class="btn btn-delete" (click)="onDelete()">
+      Eliminar
+    </button>
+  </div>
+</div>
