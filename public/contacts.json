@@ -1,0 +1,60 @@
+[
+  {
+    "id": "1",
+    "name": "Diego Ruiz",
+    "email": "diego.ruiz@atltest.com",
+    "phones": [
+      {
+        "id": "phone-1",
+        "type": "mobile",
+        "number": "+57 300 123 4567"
+      },
+      {
+        "id": "phone-2",
+        "type": "work",
+        "number": "+57 601 234 5678"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "María García",
+    "email": "maria.garcia@atltest.com",
+    "phones": [
+      {
+        "id": "phone-3",
+        "type": "mobile",
+        "number": "+57 310 234 5678"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Carlos Rodríguez",
+    "email": "carlos.rodriguez@atltest.com",
+    "phones": [
+      {
+        "id": "phone-4",
+        "type": "work",
+        "number": "+57 601 345 6789"
+      },
+      {
+        "id": "phone-5",
+        "type": "home",
+        "number": "+57 601 456 7890"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Ana Martínez",
+    "email": "ana.martinez@atltest.com",
+    "phones": [
+      {
+        "id": "phone-6",
+        "type": "mobile",
+        "number": "+57 320 567 8901"
+      }
+    ]
+  }
+]
