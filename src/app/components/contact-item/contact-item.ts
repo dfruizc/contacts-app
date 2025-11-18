@@ -1,13 +1,13 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Contact } from '../../models/contact.model';
+import { Contact } from '../../interfaces/contact.interface';
 
 @Component({
   selector: 'app-contact-item',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './contact-item.html',
-  styleUrl: './contact-item.css',
+  styleUrl: './contact-item.scss',
 })
 export class ContactItem {
   @Input({ required: true }) contact!: Contact;

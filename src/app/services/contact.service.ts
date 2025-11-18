@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { Contact } from '../models/contact.model';
+import { Contact } from '../interfaces/contact.interface';
 
 const STORAGE_KEY = 'contacts-app-data';
 

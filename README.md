@@ -100,7 +100,7 @@ contacts-app/
 │   │   │   ├── contact-list/
 │   │   │   ├── contact-item/
 │   │   │   └── contact-form/
-│   │   ├── models/          # TypeScript interfaces
+│   │   ├── interfaces/      # TypeScript interfaces
 │   │   ├── services/         # Business logic
 │   │   └── app.routes.ts     # Routing configuration
 │   └── main.ts

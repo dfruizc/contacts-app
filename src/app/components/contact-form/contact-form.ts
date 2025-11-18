@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormArray, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ContactService } from '../../services/contact.service';
-import { Contact, Phone } from '../../models/contact.model';
+import { Contact, Phone } from '../../interfaces/contact.interface';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './contact-form.html',
-  styleUrl: './contact-form.css',
+  styleUrl: './contact-form.scss',
 })
 export class ContactForm implements OnInit {
   private fb = inject(FormBuilder);

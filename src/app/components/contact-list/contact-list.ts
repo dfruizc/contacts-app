@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { ContactService } from '../../services/contact.service';
 import { ContactItem } from '../contact-item/contact-item';
-import { Contact } from '../../models/contact.model';
+import { Contact } from '../../interfaces/contact.interface';
 
 @Component({
   selector: 'app-contact-list',
   standalone: true,
   imports: [CommonModule, RouterModule, ContactItem],
   templateUrl: './contact-list.html',
-  styleUrl: './contact-list.css',
+  styleUrl: './contact-list.scss',
 })
 export class ContactList implements OnInit {
   private contactService = inject(ContactService);
